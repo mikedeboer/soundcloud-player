@@ -1,0 +1,9 @@
+{
+  "name": "soundcloud-player",
+  "title": "Soundcloud Player",
+  "id": "jid1-RSQYRvAj3YcaHA",
+  "description": "Control Soundcloud from your toolbar, with ease.",
+  "author": "Mike de Boer <info@mikedeboer.nl>",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
