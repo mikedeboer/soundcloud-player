@@ -1,0 +1,119 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+%define toolbarButtonPressed :hover:active:not([disabled="true"]):not([cui-areatype="menu-panel"])
+%define inAnyPanel :-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])
+%define menuPanelButtonWidth (22.35em / 3 - 0.1px)
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#prev-button,
+#play-button,
+#next-button {
+  list-style-image: url(@toolbarButtonsGlyph@);
+}
+
+:-moz-any(#prev-button,#play-button,#next-button) > .toolbarbutton-icon {
+  margin: 0;
+}
+
+#prev-button {
+  -moz-margin-end: 0;
+  -moz-image-region: rect(0, 18px, 18px, 0);
+}
+
+#play-button {
+  border-radius: 0;
+  margin-right: 0;
+  margin-left: 0;
+  -moz-image-region: rect(0, 36px, 18px, 18px);
+}
+
+#play-button[state="playing"] {
+  -moz-image-region: rect(0, 54px, 18px, 36px);
+}
+
+#next-button {
+  -moz-border-start: none;
+  -moz-margin-start: 0;
+  -moz-image-region: rect(0, 72px, 18px, 54px);
+}
+
+@media (min-resolution: 2dppx) {
+  #prev-button,
+  #play-button,
+  #next-button {
+    list-style-image: url(@toolbarButtonsGlyph2x@);
+  }
+
+  :-moz-any(#prev-button,#play-button,#next-button) > .toolbarbutton-icon {
+    width: 18px;
+  }
+
+  #prev-button {
+    -moz-image-region: rect(0, 36px, 36px, 0);
+  }
+
+  #play-button {
+    -moz-image-region: rect(0, 72px, 36px, 36px);
+  }
+
+  #play-button[state="playing"] {
+    -moz-image-region: rect(0, 108px, 36px, 72px);
+  }
+
+  #next-button {
+    -moz-image-region: rect(0, 144px, 36px, 108px);
+  }
+}
+
+#soundcloud-player[cui-areatype="toolbar"] > #prev-button {
+  -moz-border-end: 0;
+}
+
+#soundcloud-player@inAnyPanel@ > #play-button {
+  /* reduce the width with 2px for this button to compensate for two separators
+     of 1px. */
+  min-width: calc(@menuPanelButtonWidth@ - 2px);
+  max-width: calc(@menuPanelButtonWidth@ - 2px);
+}
+
+#prev-button:-moz-locale-dir(ltr),
+#next-button:-moz-locale-dir(rtl) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#prev-button:-moz-locale-dir(rtl),
+#next-button:-moz-locale-dir(ltr) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#wrapper-soundcloud-player:-moz-any([place="palette"],[place="panel"]) > #soundcloud-player {
+  -moz-margin-start: 0;
+}
+
+#wrapper-soundcloud-player[place="palette"] > #soundcloud-player > toolbarbutton,
+#wrapper-soundcloud-player[place="palette"] > #soundcloud-player > separator {
+  margin-top: 20px;
+}
+
+#wrapper-soundcloud-player[place="palette"] > #soundcloud-player > toolbarbutton {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 24px;
+  min-width: 24px;
+  max-height: 24px;
+  min-height: 24px;
+  padding: 4px;
+}
+
+#wrapper-soundcloud-player[place="palette"] > #soundcloud-player > toolbarbutton > .toolbarbutton-icon {
+  width: 16px;
+}
+
+#wrapper-soundcloud-player > #soundcloud-player > toolbarbutton > .toolbarbutton-icon {
+  opacity: 1; /* To ensure these buttons always look enabled in customize mode */
+}
