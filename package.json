@@ -1,9 +1,12 @@
 {
   "name": "soundcloud-player",
   "title": "Soundcloud Player",
-  "id": "jid1-RSQYRvAj3YcaHA",
+  "id": "soundcloud-player@mikedeboer.nl",
   "description": "Control Soundcloud from your toolbar, with ease.",
   "author": "Mike de Boer <info@mikedeboer.nl>",
   "license": "MPL 2.0",
-  "version": "0.1"
+  "version": "0.1",
+  "icon": "data/icon48x48.png",
+  "icon64": "data/icon64x64.png",
+  "minVersion": "29.*"
 }
