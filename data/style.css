@@ -8,19 +8,25 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#prev-button,
-#play-button,
-#next-button {
+:-moz-any(#prev-button, #play-button, #next-button) {
   list-style-image: url(@toolbarButtonsGlyph@);
 }
 
-:-moz-any(#prev-button,#play-button,#next-button) > .toolbarbutton-icon {
+:-moz-any(#prev-button, #play-button, #next-button):not(@inAnyPanel@):-moz-lwtheme-brighttext {
+  list-style-image: url(@toolbarButtonsGlyphInverted@);
+}
+
+:-moz-any(#prev-button, #play-button, #next-button) > .toolbarbutton-icon {
   margin: 0;
 }
 
 #prev-button {
   -moz-margin-end: 0;
   -moz-image-region: rect(0, 18px, 18px, 0);
+}
+
+#prev-button@toolbarButtonPressed@ {
+  -moz-image-region: rect(18px, 18px, 36px, 0);
 }
 
 #play-button {
@@ -30,8 +36,16 @@
   -moz-image-region: rect(0, 36px, 18px, 18px);
 }
 
+#play-button@toolbarButtonPressed@ {
+  -moz-image-region: rect(18px, 36px, 36px, 18px);
+}
+
 #play-button[state="playing"] {
   -moz-image-region: rect(0, 54px, 18px, 36px);
+}
+
+#play-button[state="playing"]@toolbarButtonPressed@ {
+  -moz-image-region: rect(18px, 54px, 36px, 36px);
 }
 
 #next-button {
@@ -40,14 +54,20 @@
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
 
+#next-button@toolbarButtonPressed@ {
+  -moz-image-region: rect(18px, 72px, 36px, 54px);
+}
+
 @media (min-resolution: 2dppx) {
-  #prev-button,
-  #play-button,
-  #next-button {
+  :-moz-any(#prev-button, #play-button, #next-button) {
     list-style-image: url(@toolbarButtonsGlyph2x@);
   }
 
-  :-moz-any(#prev-button,#play-button,#next-button) > .toolbarbutton-icon {
+  :-moz-any(#prev-button, #play-button, #next-button):not(@inAnyPanel@):-moz-lwtheme-brighttext {
+    list-style-image: url(@toolbarButtonsGlyphInverted2x@);
+  }
+
+  :-moz-any(#prev-button, #play-button, #next-button) > .toolbarbutton-icon {
     width: 18px;
   }
 
@@ -55,16 +75,32 @@
     -moz-image-region: rect(0, 36px, 36px, 0);
   }
 
+  #prev-button@toolbarButtonPressed@ {
+    -moz-image-region: rect(36px, 36px, 72px, 0);
+  }
+
   #play-button {
     -moz-image-region: rect(0, 72px, 36px, 36px);
+  }
+
+  #play-button@toolbarButtonPressed@ {
+    -moz-image-region: rect(36px, 72px, 72px, 36px);
   }
 
   #play-button[state="playing"] {
     -moz-image-region: rect(0, 108px, 36px, 72px);
   }
 
+  #play-button[state="playing"]@toolbarButtonPressed@ {
+    -moz-image-region: rect(36px, 108px, 72px, 72px);
+  }
+
   #next-button {
     -moz-image-region: rect(0, 144px, 36px, 108px);
+  }
+
+  #next-button@toolbarButtonPressed@ {
+    -moz-image-region: rect(36px, 144px, 72px, 108px);
   }
 }
 
