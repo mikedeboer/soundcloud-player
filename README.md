@@ -22,14 +22,13 @@ Features:
 * Uses the SoundCloud in-page event hub to track player status
 * Localizable (standard SDK feature)
 * Support for OSX media keys and Apple Remote - thanks to Markus Stange!
-** Check out his project at https://github.com/mstange/mediakeysappleremotesimfy
+  * Check out his project at https://github.com/mstange/mediakeysappleremotesimfy
 * Repo contains some tools that I built around it to make creating future add-ons easier:
-** CSS pre-processor, so you can write Mozilla-style CSS(tm)
-%define, %ifdef…else…endif
-** variable substitution
-** and more fun stuff.
-** Simple abstraction for writing wide-widget add-ons.
-** No docs. Yet. :-/
+  * CSS pre-processor, so you can write Mozilla-style CSS(tm): %define, %ifdef…else…endif
+  * variable substitution
+  * and more fun stuff.
+  * Simple abstraction for writing wide-widget add-ons.
+  * No docs. Yet. :-/
 
 Cheers and have fun!
 
