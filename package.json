@@ -8,5 +8,20 @@
   "version": "0.2",
   "icon": "data/icon48x48.png",
   "icon64": "data/icon64x64.png",
-  "minVersion": "29.*"
+  "minVersion": "29.*",
+  "unpack": true,
+  "preferences": [
+    {
+      "name": "useMediaKeys",
+      "title": "Use Media Keys",
+      "type": "bool",
+      "value": true
+    },
+    {
+      "name": "useRemoteControl",
+      "title": "Use Apple Remote Control",
+      "type": "bool",
+      "value": true
+    }
+  ]
 }
