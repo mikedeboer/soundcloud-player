@@ -15,6 +15,10 @@ Time for a couple of screenshots of the end result:
 
 You can find the add-on on AMO at https://addons.mozilla.org/en-US/firefox/addon/soundcloud-player/
 
+License: MPL.
+
+Sources and build instructions of the binary components can be found at https://github.com/mstange/mediakeysappleremotesimfy/tree/895c6b9a86ab919feb4d4b93481e78db3aff8ae5
+
 Features:
 * Looks up the first open SoundCloud tab and starts playing the first song in it.
 * Opens a new tab when it can’t find one
