@@ -15,13 +15,13 @@
       "name": "useMediaKeys",
       "title": "Use Media Keys",
       "type": "bool",
-      "value": true
+      "value": false
     },
     {
       "name": "useRemoteControl",
       "title": "Use Apple Remote Control",
       "type": "bool",
-      "value": true
+      "value": false
     }
   ]
 }
