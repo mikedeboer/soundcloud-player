@@ -23,7 +23,7 @@ Features:
 * Looks up the first open SoundCloud tab and starts playing the first song in it.
 * Opens a new tab when it can’t find one
 * Skip to next or previous song
-* Uses the SoundCloud in-page event hub to track player status
+* Polls the SoundCloud page structure to track player status
 * Localizable (standard SDK feature)
 * Support for OSX media keys and Apple Remote - thanks to Markus Stange!
   * Check out his project at https://github.com/mstange/mediakeysappleremotesimfy
